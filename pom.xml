@@ -86,6 +86,7 @@
 	</dependencyManagement>
 
 	<build>
+	<finalName>userservice</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
