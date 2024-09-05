@@ -23,14 +23,14 @@ pipeline {
         stage('docker image'){
             steps{
              
-                sh 'docker build -t 9894851315/projectsai:${BUILD_NUMBER} .'
+                sh 'docker build -t /projectsai:${BUILD_NUMBER} .'
                 echo 'docker image is created'
             }
         }
         stage('docker deploy'){
             steps{
                 sh 'docker container rm -f projectsai'
-                sh 'docker run --name projectsai -itd -p 9999:9999 9894851315/projectsai:${BUILD_NUMBER}'
+                sh 'docker run --name projectsai -itd -p 9393:9393 /projectsai:${BUILD_NUMBER}'
                 echo 'docker container is created'
                 echo 'docker container is running'
             }
